@@ -3,11 +3,16 @@ package org.afs.parkinglot.domain;
 import org.afs.parkinglot.domain.exception.UnrecognizedTicketException;
 import org.afs.parkinglot.domain.strategies.AvailableRateStrategy;
 import org.afs.parkinglot.domain.strategies.MaxAvailableStrategy;
+import org.afs.parkinglot.domain.strategies.ParkingStrategy;
 import org.afs.parkinglot.domain.strategies.SequentiallyStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,12 +43,21 @@ class ParkingManagerTest {
         assertEquals("Office Tower Parking", parkingLots.get(2).getName());
     }
 
-    @Test
-    void should_request_correct_parking_boy_to_park_car_and_return_valid_ticket_when_park_is_called() {
+    @ParameterizedTest
+    @MethodSource("provideParkingStrategies")
+    void should_request_correct_parking_boy_to_park_car_and_return_valid_ticket_when_park_is_called(ParkingStrategy strategy) {
         String plateNumber = "ABC123";
-        Ticket ticket = parkingManager.park(plateNumber, new SequentiallyStrategy());
+        Ticket ticket = parkingManager.park(plateNumber, strategy);
         assertNotNull(ticket);
         assertEquals(plateNumber, ticket.plateNumber());
+    }
+
+    private static Stream<Arguments> provideParkingStrategies() {
+        return Stream.of(
+                Arguments.of(new SequentiallyStrategy()),
+                Arguments.of(new MaxAvailableStrategy()),
+                Arguments.of(new AvailableRateStrategy())
+        );
     }
 
     @Test
