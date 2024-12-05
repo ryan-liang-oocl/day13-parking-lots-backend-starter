@@ -1,8 +1,8 @@
-package org.afs.pakinglot.domain.strategies;
+package org.afs.parkinglot.domain.strategies;
 
 
-import org.afs.pakinglot.domain.ParkingLot;
-import org.afs.pakinglot.domain.exception.NoAvailablePositionException;
+import org.afs.parkinglot.domain.ParkingLot;
+import org.afs.parkinglot.domain.exception.NoAvailablePositionException;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.afs.pakinglot.domain;
+package org.afs.parkinglot.domain;
 
 import java.util.Random;
 

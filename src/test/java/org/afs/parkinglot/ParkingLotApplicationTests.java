@@ -1,4 +1,4 @@
-package org.afs.pakinglot;
+package org.afs.parkinglot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

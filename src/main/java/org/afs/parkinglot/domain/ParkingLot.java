@@ -1,11 +1,11 @@
-package org.afs.pakinglot.domain;
+package org.afs.parkinglot.domain;
 
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.afs.pakinglot.domain.exception.NoAvailablePositionException;
-import org.afs.pakinglot.domain.exception.UnrecognizedTicketException;
+import org.afs.parkinglot.domain.exception.NoAvailablePositionException;
+import org.afs.parkinglot.domain.exception.UnrecognizedTicketException;
 
 public class ParkingLot {
     private int id;

@@ -1,7 +1,7 @@
-package org.afs.pakinglot.domain.strategies;
+package org.afs.parkinglot.domain.strategies;
 
 
-import org.afs.pakinglot.domain.ParkingLot;
+import org.afs.parkinglot.domain.ParkingLot;
 
 import java.util.List;
 

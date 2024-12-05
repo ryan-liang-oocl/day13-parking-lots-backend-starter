@@ -1,11 +1,11 @@
-package org.afs.pakinglot.domain;
+package org.afs.parkinglot.domain;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import org.afs.pakinglot.domain.exception.UnrecognizedTicketException;
-import org.afs.pakinglot.domain.strategies.ParkingStrategy;
-import org.afs.pakinglot.domain.strategies.SequentiallyStrategy;
+import org.afs.parkinglot.domain.exception.UnrecognizedTicketException;
+import org.afs.parkinglot.domain.strategies.ParkingStrategy;
+import org.afs.parkinglot.domain.strategies.SequentiallyStrategy;
 
 public class ParkingBoy {
     protected List<ParkingLot> parkingLots = new ArrayList<>();

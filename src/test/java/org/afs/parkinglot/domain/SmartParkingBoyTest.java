@@ -1,10 +1,10 @@
-package org.afs.pakinglot.domain;
+package org.afs.parkinglot.domain;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
-import org.afs.pakinglot.domain.strategies.MaxAvailableStrategy;
+import org.afs.parkinglot.domain.strategies.MaxAvailableStrategy;
 import org.junit.jupiter.api.Test;
 
 class SmartParkingBoyTest {

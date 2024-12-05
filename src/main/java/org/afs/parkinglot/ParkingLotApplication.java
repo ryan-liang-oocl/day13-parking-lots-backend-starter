@@ -1,4 +1,4 @@
-package org.afs.pakinglot;
+package org.afs.parkinglot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
