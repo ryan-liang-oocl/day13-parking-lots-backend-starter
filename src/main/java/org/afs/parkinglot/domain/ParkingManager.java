@@ -49,7 +49,7 @@ public class ParkingManager {
                 .orElseThrow(UnrecognizedTicketException::new);
     }
 
-    private ParkingBoy getParkingBoyByStrategy(ParkingStrategy strategy) {
+    public ParkingBoy getParkingBoyByStrategy(ParkingStrategy strategy) {
         return switch (strategy.getClass().getSimpleName()) {
             case SEQUENTIALLY_STRATEGY -> standardParkingBoy;
             case MAX_AVAILABLE_STRATEGY -> superParkingBoy;
