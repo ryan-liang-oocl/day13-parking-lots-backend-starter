@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/parking-lot")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 public class ParkingLotController {
 
     private final ParkingManager parkingManager;
