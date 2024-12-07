@@ -52,15 +52,16 @@ public class ParkingLot {
     }
 
     public Car fetch(Ticket ticket) {
-        if (!tickets.containsKey(ticket)) {
-            throw new UnrecognizedTicketException();
-        }
-
-        return tickets.remove(ticket);
+        return tickets.entrySet().stream()
+                .filter(entry -> entry.getKey().plateNumber().equals(ticket.plateNumber()))
+                .findFirst()
+                .map(entry -> tickets.remove(entry.getKey()))
+                .orElseThrow(UnrecognizedTicketException::new);
     }
 
     public boolean contains(Ticket ticket) {
-        return tickets.containsKey(ticket);
+        return tickets.keySet().stream()
+                .anyMatch(t -> t.plateNumber().equals(ticket.plateNumber()));
     }
 
     public double getAvailablePositionRate() {

@@ -1,6 +1,6 @@
 package org.afs.parkinglot.dto;
 
-public class FetchRequestDTO {
+public class TicketDTO {
     private String plateNumber;
 
     public String getPlateNumber() {
@@ -10,4 +10,5 @@ public class FetchRequestDTO {
     public void setPlateNumber(String plateNumber) {
         this.plateNumber = plateNumber;
     }
+
 }

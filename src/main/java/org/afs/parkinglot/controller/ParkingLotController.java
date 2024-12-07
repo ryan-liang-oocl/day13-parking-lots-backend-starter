@@ -4,7 +4,7 @@ import org.afs.parkinglot.domain.Car;
 import org.afs.parkinglot.domain.ParkingLot;
 import org.afs.parkinglot.domain.ParkingManager;
 import org.afs.parkinglot.domain.Ticket;
-import org.afs.parkinglot.dto.FetchRequestDTO;
+import org.afs.parkinglot.dto.TicketDTO;
 import org.afs.parkinglot.dto.ParkRequestDTO;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,8 +33,8 @@ public class ParkingLotController {
     }
 
     @PostMapping("/fetch")
-    public Car fetch(@RequestBody FetchRequestDTO fetchRequestDTO) {
-        Ticket ticket = new Ticket(fetchRequestDTO.getPlateNumber()); // Assuming position and parkingLot are not needed for fetch
+    public Car fetch(@RequestBody TicketDTO ticketDTO) {
+        Ticket ticket = new Ticket(ticketDTO.getPlateNumber()); // Assuming position and parkingLot are not needed for fetch
         return parkingManager.fetch(ticket);
     }
 }
