@@ -35,7 +35,7 @@ public class ParkingManager {
         return parkingLots;
     }
 
-    public Ticket park(String plateNumber, ParkingStrategy strategy) {
+    public Ticket park(String plateNumber, String strategy) {
         ParkingBoy parkingBoy = getParkingBoyByStrategy(strategy);
         Car car = new Car(plateNumber);
         return parkingBoy.park(car);
@@ -49,8 +49,8 @@ public class ParkingManager {
                 .orElseThrow(UnrecognizedTicketException::new);
     }
 
-    public ParkingBoy getParkingBoyByStrategy(ParkingStrategy strategy) {
-        return switch (strategy.getClass().getSimpleName()) {
+    public ParkingBoy getParkingBoyByStrategy(String strategy) {
+        return switch (strategy) {
             case SEQUENTIALLY_STRATEGY -> standardParkingBoy;
             case MAX_AVAILABLE_STRATEGY -> superParkingBoy;
             case AVAILABLE_RATE_STRATEGY -> superSmartParkingBoy;
