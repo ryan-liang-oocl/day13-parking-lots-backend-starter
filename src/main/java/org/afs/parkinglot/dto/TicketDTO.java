@@ -11,4 +11,7 @@ public class TicketDTO {
         this.plateNumber = plateNumber;
     }
 
+    public TicketDTO(String plateNumber) {
+        this.plateNumber = plateNumber;
+    }
 }

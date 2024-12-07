@@ -1,10 +1,13 @@
 package org.afs.parkinglot.dto;
 
-import org.afs.parkinglot.domain.strategies.ParkingStrategy;
-
 public class ParkRequestDTO {
     private String plateNumber;
-    private String parkingBoyStrategy;
+    private String parkingStrategy;
+
+    public ParkRequestDTO(String plateNumber, String parkingStrategy) {
+        this.plateNumber = plateNumber;
+        this.parkingStrategy = parkingStrategy;
+    }
 
     public String getPlateNumber() {
         return plateNumber;
@@ -14,11 +17,11 @@ public class ParkRequestDTO {
         this.plateNumber = plateNumber;
     }
 
-    public String getParkingBoyStrategy() {
-        return this.parkingBoyStrategy;
+    public String getParkingStrategy() {
+        return this.parkingStrategy;
     }
 
-    public void setParkingBoyStrategy(String parkingBoyStrategy) {
-        this.parkingBoyStrategy = parkingBoyStrategy;
+    public void setParkingStrategy(String parkingStrategy) {
+        this.parkingStrategy = parkingStrategy;
     }
 }

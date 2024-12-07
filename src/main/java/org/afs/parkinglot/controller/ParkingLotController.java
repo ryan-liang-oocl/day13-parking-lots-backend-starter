@@ -29,7 +29,7 @@ public class ParkingLotController {
 
     @PostMapping("/park")
     public Ticket park(@RequestBody ParkRequestDTO parkRequestDTO) {
-        return parkingManager.park(parkRequestDTO.getPlateNumber(), parkRequestDTO.getParkingBoyStrategy());
+        return parkingManager.park(parkRequestDTO.getPlateNumber(), parkRequestDTO.getParkingStrategy());
     }
 
     @PostMapping("/fetch")
