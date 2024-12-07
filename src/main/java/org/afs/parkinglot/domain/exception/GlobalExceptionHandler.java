@@ -12,7 +12,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(UnrecognizedTicketException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<String> handleCarNotFoundException(UnrecognizedTicketException ex) {
+    public ResponseEntity<String> handleUnrecognizedTicketException(UnrecognizedTicketException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
